@@ -1,0 +1,14 @@
+### INTELLIJ ###
+.idea/
+out/
+.idea_modules/
+*.iml
+### MAVEN ###
+target/
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+

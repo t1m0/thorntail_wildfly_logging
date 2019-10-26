@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<module xmlns="urn:jboss:module:1.5" name="com.t1m0.logging">
+    <resources>
+        <artifact name="com.t1m0.logging:logging:1.0.0"/>
+        <artifact name="com.fasterxml.jackson.core:jackson-core:2.9.9"/>
+        <artifact name="org.slf4j:slf4j-api:1.7.28"/>
+    </resources>
+</module>
