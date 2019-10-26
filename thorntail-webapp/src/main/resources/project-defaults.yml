@@ -1,0 +1,21 @@
+thorntail:
+  bind:
+    address: 0.0.0.0
+  http:
+    port: 8080
+
+  logging:
+    custom-formatters:
+      CUSTOM_FORMAT:
+        attribute-class: com.t1m0.logging.CustomLogFormatter
+        module: com.t1m0.logging
+    console-handlers:
+      CONSOLE:
+        named-formatter: CUSTOM_FORMAT
+      root-logger:
+        handlers:
+          - CONSOLE
+        level: INFO
+      loggers:
+        com.t1m0:
+          level: INFO
