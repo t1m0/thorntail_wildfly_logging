@@ -17,11 +17,6 @@
 
         <dependency>
             <groupId>com.t1m0.logging</groupId>
-            <artifactId>logging-fraction</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.t1m0.logging</groupId>
             <artifactId>logging</artifactId>
         </dependency>
 
@@ -32,11 +27,6 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>logging</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
         </dependency>
 
         <dependency>

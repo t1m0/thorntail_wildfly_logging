@@ -31,11 +31,6 @@
                 <artifactId>logging</artifactId>
                 <version>1.0.0</version>
             </dependency>
-            <dependency>
-                <groupId>com.t1m0.logging</groupId>
-                <artifactId>logging-fraction</artifactId>
-                <version>1.0.0</version>
-            </dependency>
 
             <dependency>
                 <groupId>io.thorntail</groupId>
@@ -99,19 +94,6 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>io.thorntail</groupId>
-                    <artifactId>thorntail-fraction-plugin</artifactId>
-                    <version>${thorntail-fraction-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>process-classes</phase>
-                            <goals>
-                                <goal>process</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
@@ -148,7 +130,6 @@
 
     <modules>
         <module>logging</module>
-        <module>logging-fraction</module>
         <module>thorntail-webapp</module>
     </modules>
 </project>
