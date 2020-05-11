@@ -23,7 +23,11 @@ public class TimeEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public String get() {
         MDC.put("traceId", UUID.randomUUID().toString());
-        LOGGER.info("Test log");
-        return String.format("{\"value\" : \"The time is %s\"}", new Date());
+        try {
+            LOGGER.info("Test log");
+            return String.format("{\"value\" : \"The time is %s\"}", new Date());
+        } finally {
+            MDC.remove("traceId");
+        }
     }
 }
