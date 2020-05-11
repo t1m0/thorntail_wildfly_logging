@@ -2,7 +2,9 @@
 <module xmlns="urn:jboss:module:1.5" name="com.t1m0.logging">
     <resources>
         <artifact name="com.t1m0.logging:logging:1.0.0"/>
-        <artifact name="com.fasterxml.jackson.core:jackson-core:2.9.10"/>
-        <artifact name="org.jboss.logmanager:jboss-logmanager:2.1.15.Final"/>
     </resources>
+    <dependencies>
+        <module name="com.fasterxml.jackson.core.jackson-core"/>
+        <module name="org.jboss.logmanager"/>
+    </dependencies>
 </module>
