@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+  - This file is completely useless, because TimeEndpoing uses org.slf4j.MDC.
+  - However, if it were to use org.jboss.logmanager.MDC for some reason, then this file would be required
+  - and the content below would have to be uncommented.
+  -->
+<jboss-deployment-structure>
+<!--
+    <deployment>
+        <dependencies>
+            <module name="org.jboss.logmanager"/>
+        </dependencies>
+    </deployment>
+-->
+</jboss-deployment-structure>
