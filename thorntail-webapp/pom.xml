@@ -14,12 +14,6 @@
 
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.t1m0.logging</groupId>
-            <artifactId>logging</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
@@ -32,6 +26,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
