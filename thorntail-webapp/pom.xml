@@ -14,17 +14,6 @@
 
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.t1m0.logging</groupId>
-            <artifactId>logging-fraction</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.t1m0.logging</groupId>
-            <artifactId>logging</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
@@ -35,13 +24,9 @@
         </dependency>
 
         <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

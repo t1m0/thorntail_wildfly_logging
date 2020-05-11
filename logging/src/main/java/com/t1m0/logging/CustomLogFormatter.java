@@ -9,20 +9,19 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
-import org.jboss.logmanager.MDC;
+import org.jboss.logmanager.ExtFormatter;
+import org.jboss.logmanager.ExtLogRecord;
 
-public class CustomLogFormatter extends Formatter {
+public class CustomLogFormatter extends ExtFormatter {
 
     private static final String ERROR_MESSAGE = "{\"level\":\"SEVERE\"\"message\":\"ERROR WHILE LOGGING EVENT! %s %s}\n";
 
     @Override
-    public String format(LogRecord record) {
+    public String format(ExtLogRecord record) {
         int threadID = record.getThreadID();
         String timeStampString = Instant
                 .ofEpochMilli(record.getMillis())
@@ -39,7 +38,7 @@ public class CustomLogFormatter extends Formatter {
             writeField(jGenerator, "level", record.getLevel().toString());
             writeField(jGenerator, "logger_name", record.getLoggerName());
             jGenerator.writeNumberField("thread_id", threadID);
-            writeMDC(jGenerator);
+            writeMDC(jGenerator, record.getMdcCopy());
             if (record.getThrown() != null) {
                 writeException(jGenerator, record.getThrown());
             }
@@ -60,9 +59,8 @@ public class CustomLogFormatter extends Formatter {
         jGenerator.writeEndObject();
     }
 
-    private void writeMDC(JsonGenerator jGenerator) throws IOException {
+    private void writeMDC(JsonGenerator jGenerator, Map<String, String> mdcCopy) throws IOException {
         jGenerator.writeObjectFieldStart("mdc");
-        Map<String, String> mdcCopy = MDC.copy();
         for (Map.Entry<String, String> entry : mdcCopy.entrySet()) {
             writeField(jGenerator, entry.getKey(), entry.getValue());
         }
